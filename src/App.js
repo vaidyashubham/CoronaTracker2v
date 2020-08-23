@@ -97,7 +97,7 @@ const App = () => {
               >
                 <MenuItem value="worldwide">Worldwide</MenuItem>
                 {countries.map((country) => (
-                  <MenuItem value={country.value}>{country.name}</MenuItem>
+                  <MenuItem value={country.value} key={country.value}>{country.name}</MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -132,6 +132,7 @@ const App = () => {
             <Donut data={fatalityRate(countryInfo.cases, countryInfo.recovered)} title="Recovery Rate" />
           </div>
           <Map
+            key={countries}
             countries={mapCountries}
             casesType={casesType}
             center={mapCenter}

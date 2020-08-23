@@ -48,9 +48,10 @@ export const recoveryRate = (totalInfected, totalRecovered) => {
 export const prettyPrintStat = (stat) =>
   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
-export const showDataOnMap = (data, casesType = "cases") =>
+export const showDataOnMap = (data, casesType = "cases") =>{
   data.map((country) => (
     <Circle
+    key={data.country}
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}
@@ -78,4 +79,4 @@ export const showDataOnMap = (data, casesType = "cases") =>
         </div>
       </Popup>
     </Circle>
-  ));
+  ));}
