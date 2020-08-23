@@ -1,0 +1,13 @@
+#lab_social_icon_footer {
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+}
+
+.profile-link {
+  font-weight: bold;
+  text-decoration: none;
+}
