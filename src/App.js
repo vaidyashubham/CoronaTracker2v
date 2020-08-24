@@ -151,6 +151,7 @@ const App = () => {
           </CardContent>
         </Card>
       </div>
+      <h4 className="text-center m-2">Habits you need to adopt if you want to survive the COVID pandemic.</h4>
       <Habits />
       <Footer />
     </div>
