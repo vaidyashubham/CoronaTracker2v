@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactStoreIndicator from 'react-score-indicator'
+import "./Donut.css"
 
 function Donut({ data, title }) {
   return (
-    <div>
-      <h3 className="text-center">{title}</h3>
+    <div className="donut">
+      <h4 className="text-center">{title}</h4>
       <ReactStoreIndicator
-        value={data}
+        value={isNaN(data) ? "00" : data}
         maxValue={100}
       />
     </div>

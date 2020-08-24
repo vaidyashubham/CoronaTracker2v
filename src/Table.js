@@ -5,7 +5,7 @@ import numeral from "numeral";
 function Table({ countries }) {
   return (
     <div className="table">
-      <table>
+      <table style={{width:"inherit"}}>
         <tbody>
           {
             countries.map((country) => (
