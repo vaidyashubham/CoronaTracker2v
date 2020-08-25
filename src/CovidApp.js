@@ -186,14 +186,13 @@ class CovidApp extends Component {
     return (
       <>
         <div className={classes.content}>
+          <h3 className={classes.tableHeading}>
+            State/UT Wise Data (India){" "}
+          </h3>
           <div className={classes.tableContainer}>
-            <h3 className={classes.tableHeading}>
-              State/UT Wise Data (India){" "}
-            </h3>
             <DisplayTable
               tableData={data}
               districtLevel={districtLevel}
-            // isDarkMode={isDarkMode}
             />
           </div>
         </div>

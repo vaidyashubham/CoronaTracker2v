@@ -94,10 +94,10 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
         <>
           <tr className="district-tr" key={`${statecode} Dist`}>
             <th className="tableHead districtHead">District</th>
-            <th className="tableHead districtHead">Confirmed</th>
+            <th className="tableHead districtHead">Confirm</th>
             <th className="tableHead districtHead">Active</th>
-            <th className="tableHead districtHead">Recovered</th>
-            <th className="tableHead districtHead">Deceased</th>
+            <th className="tableHead districtHead">Recover</th>
+            <th className="tableHead districtHead">Deaths</th>
           </tr>
           {districtData}
           <tr className="spacer-bottom"></tr>
@@ -149,7 +149,7 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
               onClick={() => requestSort("confirmed")}
               className={`tableHead-Button ${getClassNamesFor("confirmed")}`}
             >
-              Confirmed
+              Confirm
             </button>
           </th>
           <th className="tableHead">
@@ -167,7 +167,7 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
               onClick={() => requestSort("recovered")}
               className={`tableHead-Button ${getClassNamesFor("recovered")}`}
             >
-              Recovered
+              Recover
             </button>
           </th>
           <th className="tableHead">
@@ -176,7 +176,7 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
               onClick={() => requestSort("deaths")}
               className={`tableHead-Button ${getClassNamesFor("deaths")}`}
             >
-              Deceased
+              Deaths
             </button>
           </th>
         </tr>
