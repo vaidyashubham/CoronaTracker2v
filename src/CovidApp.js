@@ -1,6 +1,6 @@
 import { withStyles } from "@material-ui/styles";
 import axios from "axios";
-import { formatDistance } from "date-fns";
+// import { formatDistance } from "date-fns";
 import React, { Component } from "react";
 import Lottie from "react-lottie";
 import * as animationData from "./assets/loading.json";
@@ -142,14 +142,12 @@ class CovidApp extends Component {
   }
 
   render() {
-    const { classes, setDarkMode, isDarkMode } = this.props;
+    const { classes } = this.props;
     const {
-      mapData,
       isLoading,
       data,
       districtLevel,
-      expanded,
-      updates,
+      // updates,
     } = this.state;
 
     if (isLoading) {
@@ -159,31 +157,31 @@ class CovidApp extends Component {
         </div>
       );
     }
-    let displayUpdates;
-    try {
-      displayUpdates = updates
-        .slice(-5)
-        .reverse()
-        .map(({ update, timestamp }, i) => {
-          update = update.replace("\n", "<br/>");
-          return (
-            <div className={classes.updateBox} key={i}>
-              <h5 className={classes.updateHeading}>
-                {`${formatDistance(
-                  new Date(timestamp * 1000),
-                  new Date()
-                )} ago`}
-              </h5>
-              <h4
-                className={classes.updateText}
-                dangerouslySetInnerHTML={{
-                  __html: update,
-                }}
-              ></h4>
-            </div>
-          );
-        });
-    } catch (err) { }
+    // let displayUpdates;
+    // try {
+    //   displayUpdates = updates
+    //     .slice(-5)
+    //     .reverse()
+    //     .map(({ update, timestamp }, i) => {
+    //       update = update.replace("\n", "<br/>");
+    //       return (
+    //         <div className={classes.updateBox} key={i}>
+    //           <h5 className={classes.updateHeading}>
+    //             {`${formatDistance(
+    //               new Date(timestamp * 1000),
+    //               new Date()
+    //             )} ago`}
+    //           </h5>
+    //           <h4
+    //             className={classes.updateText}
+    //             dangerouslySetInnerHTML={{
+    //               __html: update,
+    //             }}
+    //           ></h4>
+    //         </div>
+    //       );
+    //     });
+    // } catch (err) { }
 
     return (
       <>
@@ -195,7 +193,7 @@ class CovidApp extends Component {
             <DisplayTable
               tableData={data}
               districtLevel={districtLevel}
-              isDarkMode={isDarkMode}
+            // isDarkMode={isDarkMode}
             />
           </div>
         </div>
