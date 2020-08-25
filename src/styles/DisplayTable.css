@@ -1,0 +1,165 @@
+table {
+  border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.tableHead {
+  text-align: left;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  color: #333333;
+  /* border-bottom: 2px solid black; */
+}
+
+
+.tableHead-Button {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-radius: 1.5rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 1rem 2rem;
+  text-align: left;
+  margin-bottom: 1px;
+  background-color: #333333;
+  color: #fff;
+
+  transition: all .4s;
+}
+
+
+
+.tableHead-Button:hover,
+.tableHead-Button:focus {
+  outline: none;
+  border: none;
+}
+
+.tableHead-Button.ascending::after {
+  content: '\2193';
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.tableHead-Button.descending::after {
+  content: '\2191';
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.state-td {
+  color: #333333;
+  padding: 1rem 2rem;
+  margin-top: 5rem;
+}
+
+.state-tr {
+  border-radius: 2rem;
+}
+
+.state-tr:hover {
+  background-color: #333030;
+  transition: all .3s;
+
+}
+
+.state-tr:hover td {
+  color: #fff;
+}
+
+.state-tr:nth-child(even) {
+  background: rgba(235, 235, 235, 0.541);
+}
+
+.state-tr:nth-child(even):hover {
+  background-color: #333333;
+}
+
+.districtHead {
+  margin: 1.5rem 1rem;
+  background-color: #3e3e3f;
+  padding: 1rem 3rem;
+  color: #fff
+}
+
+.district-td {
+  padding: 1rem 3rem;
+  margin-bottom: 1rem;
+}
+
+.district-tr {
+  border: 1px solid #3e3e3f;
+}
+
+.delta-confirmed,
+.delta-recovered,
+.delta-deceased {
+  font-size: 1.5rem;
+  margin-left: .5rem;
+}
+
+.delta-confirmed {
+  color: #F9345E;
+}
+
+.delta-recovered {
+  color: #1CB142;
+}
+
+.delta-deceased {
+  color: #6236FF;
+}
+
+.spacer-bottom {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.spacer-top {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 600px) {
+
+  .delta-confirmed,
+  .delta-recovered,
+  .delta-deceased {
+    font-size: .9rem;
+    margin-left: .5rem;
+  }
+
+  .tableHead {
+    margin: 0;
+  }
+
+  .tableHead-Button {
+    padding: 1rem;
+  }
+
+  .district-td {
+    padding: .2rem;
+    margin: 0;
+  }
+
+  .districtHead {
+    padding: .2rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .state-td {
+    padding: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .state-tr {
+    border-radius: 1rem;
+  }
+
+}

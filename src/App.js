@@ -10,13 +10,16 @@ import {
 import InfoBox from "./InfoBox";
 import LineGraph from "./LineGraph";
 import Table from "./Table";
-import { sortData, prettyPrintStat, fatalityRate, recoveryRate } from "./util";
+import { sortData, prettyPrintStat, fatalityRate } from "./util";
 import numeral from "numeral";
 import Map from "./Map";
 import Footer from "./Footer";
 import Habits from "./Habits";
 import image from "./images/image.png";
 import Donut from "./Donut"
+import CovidApp from "./CovidApp";
+
+// import SelectState from "./SelectState"
 import "leaflet/dist/leaflet.css";
 
 const App = () => {
@@ -28,14 +31,11 @@ const App = () => {
   const [casesType, setCasesType] = useState("cases");
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
   const [mapZoom, setMapZoom] = useState(3);
-  // const [fatalRate, setFatalRate] = useState()
-  // const [recoverRate, setRecoverRate] = useState()
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         setCountryInfo(data);
       });
   }, []);
@@ -71,11 +71,6 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-        let fRate = fatalityRate(data.cases, data.deaths)
-        let rRate = recoveryRate(data.cases, data.recovered)
-        // setFatalRate(fRate)
-        // setRecoverRate(rRate)
-        console.log(fRate, rRate)
         setInputCountry(countryCode);
         setCountryInfo(data);
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
@@ -97,7 +92,7 @@ const App = () => {
               >
                 <MenuItem value="worldwide">Worldwide</MenuItem>
                 {countries.map((country) => (
-                  <MenuItem value={country.value} key={country.value}>{country.name}</MenuItem>
+                  <MenuItem value={country.value}>{country.name}</MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -132,13 +127,11 @@ const App = () => {
             <Donut data={fatalityRate(countryInfo.cases, countryInfo.recovered)} title="Recovery Rate" />
           </div>
           <Map
-            key={countries}
             countries={mapCountries}
             casesType={casesType}
             center={mapCenter}
             zoom={mapZoom}
           />
-
         </div>
         <Card className="app__right">
           <CardContent>
@@ -151,6 +144,7 @@ const App = () => {
           </CardContent>
         </Card>
       </div>
+      <CovidApp />
       <h4 className="text-center m-2">Habits you need to adopt if you want to survive the COVID pandemic.</h4>
       <Habits />
       <Footer />
