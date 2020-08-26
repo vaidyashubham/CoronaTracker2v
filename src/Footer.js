@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="text-center center-block">
         &copy; 2020 Copyright:{" "}
         <a
-          href="https://shubhamvaidya.netlify.app/about/"
+          href="https://shubhamvaidya.netlify.app"
           className="profile-link"
         >
           Shubham Vaidya
