@@ -129,9 +129,9 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
 
   return (
     <table >
-      <caption>
+      {/* <caption>
         Expand to get district wise data
-      </caption>
+      </caption> */}
       <thead>
         <tr>
           <th className="tableHead">
@@ -201,9 +201,9 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
               <td className="state-td" style={lightText}>
                 {item.confirmed}
                 {item.deltaconfirmed > 0 && (
-                  <span className="delta-confirmed">
+                  <div className="delta-confirmed">
                     [{item.deltaconfirmed}]{" "}
-                  </span>
+                  </div>
                 )}
               </td>
               <td className="state-td" style={lightText}>
@@ -212,15 +212,15 @@ const DisplayTable = ({ tableData, isDarkMode, districtLevel }) => {
               <td className="state-td" style={lightText}>
                 {item.recovered}
                 {item.deltarecovered > 0 && (
-                  <span className="delta-recovered">
+                  <div className="delta-recovered">
                     [{item.deltarecovered}]{" "}
-                  </span>
+                  </div>
                 )}
               </td>
               <td className="state-td" style={lightText}>
                 {item.deaths}
                 {item.deltadeaths > 0 && (
-                  <span className="delta-deceased">[{item.deltadeaths}] </span>
+                  <div className="delta-deceased">[{item.deltadeaths}] </div>
                 )}
               </td>
             </tr>

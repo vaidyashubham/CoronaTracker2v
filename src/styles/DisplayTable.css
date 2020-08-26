@@ -55,7 +55,7 @@ table {
 
 .state-td {
   color: #333333;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   margin-top: 5rem;
 }
 
@@ -104,8 +104,8 @@ table {
 .delta-confirmed,
 .delta-recovered,
 .delta-deceased {
-  font-size: 1.5rem;
-  margin-left: .5rem;
+  font-size: 0.9rem;
+  /* margin-left: .5rem; */
 }
 
 .delta-confirmed {
@@ -136,7 +136,7 @@ table {
   .delta-recovered,
   .delta-deceased {
     font-size: .9rem;
-    margin-left: .5rem;
+    /* margin-left: .5rem; */
   }
 
   .tableHead {
@@ -144,7 +144,8 @@ table {
   }
 
   .tableHead-Button {
-    padding: 1rem;
+    padding: 0.4rem;
+    text-align: center;
   }
 
   .district-td {
@@ -160,7 +161,7 @@ table {
 
 @media (max-width: 575px) {
   .state-td {
-    padding: 1rem;
+    padding: 0.3rem;
     margin-top: 2.5rem;
   }
 

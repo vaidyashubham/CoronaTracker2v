@@ -11,9 +11,8 @@ import "./styles/DarkModeButton.css";
 // import Barchart from "./Barchart";
 // import Charts from "./Charts";
 import DisplayTable from "./DisplayTable";
-// import Footer from "./Footer";
-// import MapSection from "./MapSection";
-// import Overview from "./Overview";
+import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const defaultOptions = {
   loop: true,
@@ -157,31 +156,6 @@ class CovidApp extends Component {
         </div>
       );
     }
-    // let displayUpdates;
-    // try {
-    //   displayUpdates = updates
-    //     .slice(-5)
-    //     .reverse()
-    //     .map(({ update, timestamp }, i) => {
-    //       update = update.replace("\n", "<br/>");
-    //       return (
-    //         <div className={classes.updateBox} key={i}>
-    //           <h5 className={classes.updateHeading}>
-    //             {`${formatDistance(
-    //               new Date(timestamp * 1000),
-    //               new Date()
-    //             )} ago`}
-    //           </h5>
-    //           <h4
-    //             className={classes.updateText}
-    //             dangerouslySetInnerHTML={{
-    //               __html: update,
-    //             }}
-    //           ></h4>
-    //         </div>
-    //       );
-    //     });
-    // } catch (err) { }
 
     return (
       <>
@@ -189,6 +163,9 @@ class CovidApp extends Component {
           <h3 className={classes.tableHeading}>
             State/UT Wise Data (India){" "}
           </h3>
+          <h6 className="text-center">Click on <FontAwesomeIcon
+            icon={faArrowCircleRight}
+          /> to get district wise data</h6>
           <div className={classes.tableContainer}>
             <DisplayTable
               tableData={data}
