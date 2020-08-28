@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import InfoBox from "./InfoBox";
 import LineGraph from "./LineGraph";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 import Table from "./Table";
 import { sortData, prettyPrintStat, fatalityRate } from "./util";
 import numeral from "numeral";
@@ -147,6 +148,7 @@ const App = () => {
       <CovidApp />
       <h4 className="text-center m-2">Habits you need to adopt if you want to survive the COVID pandemic.</h4>
       <Habits />
+      <ScrollUpButton AnimationDuration={1000} style={{ outline: "none" }} />
       <Footer />
     </div>
   );

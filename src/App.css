@@ -45,7 +45,10 @@ body {
 .app__rate {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 15px;
+  height: 250px;
 }
 
 .app__left {

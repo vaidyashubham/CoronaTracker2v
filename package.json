@@ -24,6 +24,7 @@
     "react-lottie": "^1.2.3",
     "react-score-indicator": "^2.2.1",
     "react-scripts": "3.4.1",
+    "react-scroll-up-button": "^1.6.4",
     "react-table": "^7.5.0"
   },
   "scripts": {
