@@ -6,7 +6,7 @@ function Donut({ data, title }) {
     <div>
       <h3 className="text-center">{title}</h3>
       <ReactStoreIndicator
-        value={data}
+        value={isNaN(data) ? "00" : data}
         maxValue={100}
       />
     </div>
